@@ -1,0 +1,41 @@
+" settings
+set autoindent
+set expandtab
+set ruler
+set showmode
+set noflash
+set windowname
+set iclower
+set shiftwidth=4
+set tabstop=4
+
+" vim: good parts
+map gg 1G
+map ZQ :q!
+map zz mzz.`z
+
+" movements
+map ;n /<++>df>i
+ab  ;n /<++>df>i
+
+" open current word in man
+map ;m wb"zyw:A!man "zp
+
+" fzf open files
+map ;o ::!ls -R | fzf >> %:editIEdit :bg
+
+" fzf git grep TODO
+map ;g wb"zyw:C:!git grep "zpA | fzf >> %
+
+" paragraph wrapping
+map ;w {j!}fold -s -w 80
+
+" go to definition
+map ;d wb"zyw:Atag "zp
+
+" snippets
+ab ;f for(<++>){	<++>}
+
+
+" shell check
+map ;c :!clear && shellcheck %
