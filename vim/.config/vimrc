@@ -1,0 +1,70 @@
+set nocompatible     
+
+set incsearch
+set ignorecase
+set smartcase
+
+set number
+set relativenumber
+
+set scrolloff=8
+
+syntax on
+
+set backspace=indent,eol,start
+
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set smartindent
+
+" search for files in subdirectories, use :find to open files with partial
+" match, use * for fuzzy search, use :b for mae same with open buffers
+set path+=**
+set wildmenu
+
+" soft line breaks
+set fo+=w
+
+" string length visible limit
+set colorcolumn=80
+
+let mapleader="'"
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+noremap <leader>q :bd<CR>
+
+" snippets
+" Tcl
+autocmd FileType tcl inoremap <leader>f foreach ! <++> {<Enter><++><Enter>}<Esc>?!<Enter>xi
+autocmd FileType tcl map <leader>3 :s/^/#/<Enter>j
+autocmd FileType tcl map <leader># :s/^#//<Enter>j
+
+" C-] jump to tag
+" gC-] for ambiguous tags
+" C-t jump back
+command! Tags !ectags -R .
+" add : to isKeyword class of characters, because I want to jump to tags with
+" colons in name
+set isk+=:
+
+" sentence should be separate with two spaces
+set cpo+=J
+
+" :make in shell file will triger spellcheck and show all errors (:cl)
+autocmd FileType sh :set makeprg=shellcheck\ -f\ gcc\ %
+
+" add "===" heading below current line
+nnoremap <leader>1 yypVr=
+
+" SPLITS
+" open vertical split and switch to them
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" X11
+autocmd FileType xdefaults autocmd BufWritePost * !xrdb <afile>

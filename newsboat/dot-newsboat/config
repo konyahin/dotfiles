@@ -1,0 +1,39 @@
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key G end
+bind-key g home
+bind-key o open-in-browser-and-mark-read
+bind-key n toggle-article-read
+bind-key TAB next-unread
+bind-key x delete-article
+bind-key q hard-quit
+
+color listnormal blue default
+color listfocus black yellow standout bold
+color listnormal_unread cyan default
+color listfocus_unread yellow default bold
+color info red black bold
+color article white default bold
+
+highlight all "---.*---" yellow
+highlight article "(^Лента:.*|^Заголовок:.*|^Автор:.*|^Ссылка:.*|^Дата:.*)" cyan default bold
+highlight article "https?://[^ ]+" green default
+highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+
+browser "bookmark add"
+macro v set browser "nohup mpv %u > /dev/null &"; open-in-browser; set browser "browser"
+
+articlelist-format "║%4i %f %t"
+feedlist-format "║%7u %t"
+
+feedlist-title-format "║ 📚 Ленты новостей (%u / %t)"
+articlelist-title-format "║ 📖 Новости: %T (%u / %t)"
+itemview-title-format "📰 %F: %T"
+
+download-full-page no
+scrolloff 5
+show-keymap-hint no
+show-read-articles yes
+max-items 100

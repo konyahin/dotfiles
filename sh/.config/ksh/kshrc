@@ -1,0 +1,68 @@
+export PATH=$PATH:~/.bin:~/.local/bin
+export LC_ALL=ru_RU.UTF-8
+export LANG=ru_RU.UTF-8
+export LANGUAGE=ru_RU.UTF-8
+
+export NAME='Anton Konyahin'
+export EMAIL='me@konyahin.xyz'
+
+export EDITOR=nvi
+export PAGER=less
+export BROWSER=open
+export PASSWORD_STORE_DIR="$HOME/data/pass"
+
+set -o emacs
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=1000
+HISTFILE=$HOME/.ksh_history
+PS1='${USER}@\h:\W\$ '
+
+# vim
+export MYVIMRC='~/.config/vimrc'
+export VIMINIT='source $MYVIMRC'
+
+alias z='zathura'
+alias e=$EDITOR
+alias v='bat'
+alias nb='newsboat && bookmark count'
+alias m='mutt'
+alias isync='mbsync -c ~/.config/.mbsyncrc -a'
+
+alias scratch='$EDITOR ~/data/notes/scratch.md'
+
+alias esh='$EDITOR ~/.config/ksh/kshrc'
+alias evi='$EDITOR ~/.nexrc'
+alias evim="$EDITOR $MYVIMRC"
+alias enb='$EDITOR ~/.newsboat/config'
+alias enbu='$EDITOR ~/.newsboat/urls'
+
+alias ef='$EDITOR $(ls -R | fzf)'
+alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
+alias en='$EDITOR $(find ~/data/notes -type f | fzf)'
+
+alias t='task'
+alias ta='task add'
+alias tl='task list'
+alias tt='task +todo'
+tmaybe () {
+    task $1 modify -todo +maybe
+}
+ttodo () {
+    task $1 modify -maybe +todo
+}
+
+me () {
+    $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
+}
+
+alias music-dl='youtube-dl -f "bestaudio[ext=m4a]"'
+
+alias reload='. ~/.config/ksh/kshrc'
+
+# autocomplete
+set -A complete_git -- pull push clone checkout status commit clean restore diff
+set -A complete_sttemp -- $(ls ~/project/templates)
+
+# agenda
+calendar
+task tag:todo minimal | head -6

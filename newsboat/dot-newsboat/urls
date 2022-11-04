@@ -1,0 +1,43 @@
+https://lukesmith.xyz/rss.xml "~Luke Smith"
+http://feeds.akkartik.name/kartiks-scrapbook?format=xml
+https://danluu.com/atom.xml "~Danluu blog"
+https://suckless.org/atom.xml
+https://calibre-ebook.com/changelog.rss
+https://nullprogram.com/feed/
+https://ounapuu.ee/posts/index.xml
+https://blog.benjojo.co.uk/rss.xml
+https://newsboat.org/news.atom "~Newsboat"
+https://feeds2.feedburner.com/typepad/krisdedecker/lowtechmagazineenglish
+https://hackaday.com/blog/feed/
+https://briancallahan.net/blog/feed.xml
+https://undeadly.org/cgi?action=rss
+https://xeiaso.net/blog.rss
+https://jmmv.dev/feed.xml
+https://pointersgonewild.com/feed/
+https://flak.tedunangst.com/rss
+https://stevelosh.com/rss.xml
+https://www.cambus.net/atom.xml
+https://dataswamp.org/~solene/rss.xml
+http://feeds.feedburner.com/TomJohnson?format=xml
+https://www.rfleury.com/feed
+https://konyahin.xyz/index.xml
+
+https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+issuetype+%3D+JEP+AND+resolution+%3D+Unresolved+ORDER+BY+priority+DESC%2C+updated+DESC&tempMax=1000
+
+https://news.ycombinator.com/rss
+https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
+https://www.linux.org.ru/section-rss.jsp?section=1
+https://old.reddit.com/r/programming.rss "~/r/programming"
+https://old.reddit.com/r/java.rss "~/r/java"
+https://old.reddit.com/r/coding.rss "~/r/coding"
+https://old.reddit.com/r/openbsd.rss "~/r/openbsd"
+https://old.reddit.com/r/avr.rss "~/r/avr"
+https://old.reddit.com/r/embedded.rss "~/r/embedded"
+https://old.reddit.com/r/microcontrollers.rss "~/r/microcontrollers"
+https://old.reddit.com/r/electronics.rss "~/r/electronics"
+https://old.reddit.com/r/arduino.rss "~/r/arduino"
+https://old.reddit.com/r/C_Programming.rss "~/r/c"
+https://old.reddit.com/r/lisp.rss "~/r/lisp"
+
+https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
+https://devzen.ru/feed/

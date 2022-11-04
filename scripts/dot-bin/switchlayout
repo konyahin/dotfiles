@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+LAYOUT=$(setxkbmap -query | grep layout | awk '{print $2}')
+if [ $LAYOUT = 'us' ]; then
+    setxkbmap ru
+else
+    setxkbmap us
+fi

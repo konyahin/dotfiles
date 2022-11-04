@@ -1,0 +1,26 @@
+IMAPAccount epik
+Host mail.konyahin.xyz
+Port 993
+UserCmd "pass mail/epik/login"
+PassCmd "pass mail/epik/password"
+SSLType IMAPS
+# Linux
+# CertificateFile /etc/ssl/certs/ca-certificates.crt
+# OpenBSD
+CertificateFile /etc/ssl/cert.pem
+
+IMAPStore epik-remote
+Account epik
+
+MaildirStore epik-local
+Path ~/data/mail/fastmail/
+Inbox ~/data/mail/fastmail/INBOX
+Subfolders Verbatim
+
+Channel epik
+Far :epik-remote:
+Near :epik-local:
+Create Both
+Expunge Both
+Patterns *
+SyncState *

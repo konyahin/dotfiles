@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+count=$1
+if [ -z "$count" ]
+then
+    count=1
+fi
+
+for _ in $(seq $count)
+do
+    $BROWSER "$(bookmark get)"
+done
+
+bookmark count

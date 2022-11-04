@@ -1,0 +1,70 @@
+color header brightred black ^from
+color header brightblue black ^to
+color header brightcyan black ^subject
+color header brightgreen black ^date
+
+# New mail is boldened:
+color index brightyellow black "~N"
+
+# use a for alias adding
+set alias_file = ~/.config/mutt/aliases
+source ~/.config/mutt/aliases
+
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+
+set header_cache = ~/data/mail/cache
+
+set sort = threads
+# hide plus sign if line in mail too long
+set markers = no
+set mark_old = no
+
+# don't go to next message automatically
+set pager_stop
+
+set date_format = "%d/%m"
+set index_format = "[%Z] %D %-15.15F %s"
+
+# sidebar settings
+set sidebar_visible = yes
+set sidebar_width = 16
+color sidebar_new color221 color233
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
+# Ctrl + l for view all url from mail
+macro pager \cl |urlview\n
+macro index d "<enter><exit>s+Trash\n"
+macro index C "<enter><exit>s+Checks\n"
+macro index G "!mbsync -c ~/.config/.mbsyncrc -a\n" "Receive new mails"
+bind attach <return> view-mailcap
+
+# RFC 3676 f=f
+set text_flowed
+
+# disable confirmation
+set delete
+unset confirmappend
+set quit
+
+# don't mark mails as old
+unset mark_old
+
+# Settings for my mailbox
+set folder = ~/data/mail/fastmail
+set smtp_url = "smtps://me@konyahin.xyz@mail.konyahin.xyz:465"
+set smtp_pass = "`pass mail/epik/password`"
+set from = "me@konyahin.xyz"
+set realname = "Anton Konyahin"
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+mailboxes =INBOX =Sent =Trash =Drafts =Checks =Spam =Archive

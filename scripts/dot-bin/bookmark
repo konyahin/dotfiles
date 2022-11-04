@@ -1,0 +1,77 @@
+#!/usr/bin/env sh
+
+check_env () {
+    if [ -z "$(printenv "$1")" ]
+    then
+        echo "You must set \$$1 variable $2" >&2
+        exit 1
+    fi
+}
+
+print_count () {
+    echo "Articles: $(wc -l < "$BOOKMARKS")"
+}
+
+print_help () {
+    echo "bookmark - script for keeping and retrieving your bookmarks
+Usage:
+    bookmark add \"link\"
+        save link in bookmark file
+    bookmark ls
+        view bookmarks list in your \$PAGER
+    bookmark cat
+        print all you bookamrks to terminal
+    bookmark count
+        show number of your bookmarks
+    bookmark get
+        get first bookmark from list
+"
+}
+
+if [ -z "$1" ]
+then
+    print_help
+    exit
+fi
+
+BOOKMARKS=~/data/bookmarks/bookmarks
+TEMP=~/data/bookmarks/bookmarks.temp
+
+if [ "ls" = "$1" ]
+then
+    check_env "PAGER"
+    $PAGER $BOOKMARKS
+    exit
+fi
+
+if [ "cat" = "$1" ]
+then
+    cat $BOOKMARKS
+    exit
+fi
+
+if [ "count" = "$1" ]
+then
+    print_count
+    exit
+fi
+
+if [ "get" = "$1" ]
+then
+    head -n 1 $BOOKMARKS
+    tail -n +2 $BOOKMARKS > $TEMP; mv $TEMP $BOOKMARKS
+    exit
+fi
+
+if [ "add" = "$1" ]
+then
+    if grep -qi "$2" $BOOKMARKS
+    then
+     exit 1
+    fi
+    echo "$2" >> $BOOKMARKS
+    exit
+fi
+
+echo "Unknown command"
+print_help

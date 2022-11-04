@@ -1,0 +1,8 @@
+LANG=ru_RU.UTF-8
+
+#include "/home/anton/data/calendar/personal.calendar"
+#include <calendar.birthday>
+#include <calendar.computer>
+#include <calendar.openbsd>
+#include <ru_RU.UTF-8/calendar.history>
+#include <ru_RU.UTF-8/calendar.orthodox>
