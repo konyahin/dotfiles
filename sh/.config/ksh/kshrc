@@ -39,6 +39,7 @@ alias enbu='$EDITOR ~/.newsboat/urls'
 alias ef='$EDITOR $(ls -R | fzf)'
 alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
 alias en='$EDITOR "$(find ~/data/notes -type f | fzf)"'
+alias es='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 
 alias t='task'
 alias ta='task add'
