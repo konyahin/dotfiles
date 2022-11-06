@@ -32,6 +32,18 @@ server "git.konyahin.xyz" {
     root "/acme"
     request strip 2
   }
+
+  location "*/style.css" {
+    request rewrite "/style.css"
+  }
+
+  location "*/logo.png" {
+    request rewrite "/logo.png"
+  }
+
+  location "*/favicon.png" {
+    request rewrite "/favicon.png"
+  }
 }
 END
 
