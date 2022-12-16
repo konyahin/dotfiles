@@ -63,6 +63,7 @@ alias reload='. ~/.config/ksh/kshrc'
 # autocomplete
 set -A complete_git -- pull push clone checkout status commit clean restore diff
 set -A complete_sttemp -- $(ls ~/project/templates)
+set -A complete_pkg_delete -- $(pkg_info | awk "{print \$1}")
 
 # agenda
 calendar
