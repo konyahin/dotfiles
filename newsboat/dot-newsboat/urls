@@ -20,7 +20,9 @@ https://www.cambus.net/atom.xml
 https://dataswamp.org/~solene/rss.xml
 http://feeds.feedburner.com/TomJohnson?format=xml
 https://www.rfleury.com/feed
+https://computer.rip/rss.xml
 https://konyahin.xyz/index.xml
+https://www.idontplaydarts.com/feed/
 
 https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+issuetype+%3D+JEP+AND+resolution+%3D+Unresolved+ORDER+BY+priority+DESC%2C+updated+DESC&tempMax=1000
 
