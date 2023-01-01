@@ -36,21 +36,10 @@ alias evim="$EDITOR $MYVIMRC"
 alias enb='$EDITOR ~/.newsboat/config'
 alias enbu='$EDITOR ~/.newsboat/urls'
 
-alias ef='$EDITOR $(ls -R | fzf)'
+alias ef='$EDITOR $(find . | fzf)'
 alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
 alias en='$EDITOR "$(find ~/data/notes -type f | fzf)"'
 alias es='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
-
-alias t='task'
-alias ta='task add'
-alias tl='task list'
-alias tt='task +todo'
-tmaybe () {
-    task $1 modify -todo +maybe
-}
-ttodo () {
-    task $1 modify -maybe +todo
-}
 
 me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
