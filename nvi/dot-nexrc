@@ -19,7 +19,7 @@ map ;n /<++>df>i
 ab  ;n /<++>df>i
 
 " open current word in man
-map ;m wb"zyw:A!man "zp
+map ;m wb"zyw:C!man "zp
 
 " fzf open files
 map ;o ::!ls -R | fzf >> %:editIEdit :bg
