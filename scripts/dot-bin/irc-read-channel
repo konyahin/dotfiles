@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -euo pipefail
+
+# date -f timestamp
+tail -500 -f $(irc-channels) \
+    | grep -v -e '-!- .* joined' -e '-!- .* left' \
