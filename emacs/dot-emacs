@@ -5,6 +5,10 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+; dired settings
+(add-hook 'dired-mode-hook #'dired-hide-details-mode)
+(setq dired-listing-switches "-lp")
+
 ; settings for packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -15,6 +19,8 @@
 (define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
 (define-key markdown-mode-map (kbd "M-<down>") 'markdown-next-visible-heading)
 
+(require 'restclient)
+
 (require 'howm)
 (setq howm-file-name-format "%Y-%m-%d-%H%M%S.md")
 (setq howm-template "# %title%cursor\n\n%file\n\n")
@@ -24,24 +30,20 @@
 (define-key riffle-summary-mode-map "\C-h" nil)
 (define-key howm-view-contents-mode-map "\C-h" nil)
 
-; dired settings
-(add-hook 'dired-mode-hook #'dired-hide-details-mode)
-(setq dired-listing-switches "-lp")
-
 ; custom functions and key bindings
 (defun knh-new-line-below ()
   "Insert new line below, without breaking current line"
   (interactive)
   (end-of-line)
   (newline-and-indent))
-(global-set-key (kbd "C-<return>") 'knh-new-line-below)
+(global-set-key (kbd "M-RET") 'knh-new-line-below)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(howm markdown-mode)))
+ '(package-selected-packages '(restclient howm markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
