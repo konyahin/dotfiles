@@ -1,15 +1,32 @@
-; base settings
+;; base settings
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-; dired settings
-(add-hook 'dired-mode-hook #'dired-hide-details-mode)
-(setq dired-listing-switches "-lp")
+;; abbrev mode
+(setq-default abbrev-mode t)
+(setq save-abbrevs 'silently)
 
-; settings for packages
+;; dired settings
+(setq dired-listing-switches "-lap")
+
+(defun knh-dired-find-file-other-frame ()
+  "Open file in dired and move it in another emacs frame"
+  (interactive)
+  (dired-find-file)
+  (display-buffer-use-least-recent-window
+   (current-buffer) nil)
+  (previous-buffer))
+
+(add-hook 'dired-mode-hook
+	  (lambda ()
+	    "Dired settings"
+	    (dired-hide-details-mode)
+	    (define-key dired-mode-map (kbd "M-o") 'knh-dired-find-file-other-frame)))
+
+;; settings for packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
@@ -18,8 +35,6 @@
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
 (define-key markdown-mode-map (kbd "M-<down>") 'markdown-next-visible-heading)
-
-(require 'restclient)
 
 (require 'howm)
 (setq howm-file-name-format "%Y-%m-%d-%H%M%S.md")
@@ -30,13 +45,17 @@
 (define-key riffle-summary-mode-map "\C-h" nil)
 (define-key howm-view-contents-mode-map "\C-h" nil)
 
-; custom functions and key bindings
+(require 'restclient)
+(require 'misc)
+
+;; custom functions and key bindings
+(global-set-key (kbd "M-f") 'forward-to-word)
 (defun knh-new-line-below ()
   "Insert new line below, without breaking current line"
   (interactive)
   (end-of-line)
   (newline-and-indent))
-(global-set-key (kbd "M-RET") 'knh-new-line-below)
+(global-set-key (kbd "C-c RET") 'knh-new-line-below)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
