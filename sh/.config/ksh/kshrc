@@ -6,7 +6,8 @@ export LANGUAGE=ru_RU.UTF-8
 export NAME='Anton Konyahin'
 export EMAIL='me@konyahin.xyz'
 
-export EDITOR=nvi
+export EDITOR='emacsclient -t'
+export ALTERNATE_EDITOR='emacs -nw'
 export PAGER=less
 export BROWSER=open
 export PASSWORD_STORE_DIR="$HOME/data/pass"
