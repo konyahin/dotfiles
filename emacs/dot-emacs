@@ -1,0 +1,50 @@
+; base settings
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+; settings for packages
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+(require 'markdown-mode)
+(add-hook 'markdown-mode-hook 'auto-fill-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+
+(require 'howm)
+(setq howm-file-name-format "%Y-%m-%d-%H%M%S.md")
+(setq howm-template "# %title%cursor\n\n%file\n\n")
+(setq howm-keyword-file (expand-file-name ".howm-keys" howm-directory))
+(setq howm-history-file (expand-file-name ".howm-history" howm-directory))
+(define-key howm-menu-mode-map "\C-h" nil)
+(define-key riffle-summary-mode-map "\C-h" nil)
+(define-key howm-view-contents-mode-map "\C-h" nil)
+
+(require 'ob-http)
+
+; dired settings
+(add-hook 'dired-mode-hook #'dired-hide-details-mode)
+(setq dired-listing-switches "-lp")
+
+; custom functions and key bindings
+(defun knh-new-line-below ()
+  "Insert new line below, without breaking current line"
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
+(global-set-key (kbd "C-<return>") 'knh-new-line-below)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(ob-http howm markdown-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
