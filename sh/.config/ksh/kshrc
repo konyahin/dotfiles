@@ -59,4 +59,3 @@ set -A complete_pkg_delete -- $(pkg_info | awk "{print \$1}")
 
 # agenda
 calendar
-task tag:todo minimal | head -6
