@@ -12,6 +12,8 @@
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+(define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
+(define-key markdown-mode-map (kbd "M-<down>") 'markdown-next-visible-heading)
 
 (require 'howm)
 (setq howm-file-name-format "%Y-%m-%d-%H%M%S.md")
@@ -21,8 +23,6 @@
 (define-key howm-menu-mode-map "\C-h" nil)
 (define-key riffle-summary-mode-map "\C-h" nil)
 (define-key howm-view-contents-mode-map "\C-h" nil)
-
-(require 'ob-http)
 
 ; dired settings
 (add-hook 'dired-mode-hook #'dired-hide-details-mode)
@@ -41,7 +41,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(ob-http howm markdown-mode)))
+ '(package-selected-packages '(howm markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
