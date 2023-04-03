@@ -67,4 +67,4 @@ set record = "+Sent"
 set trash = "+Trash"
 set postponed = "+Drafts"
 
-mailboxes =INBOX =Sent =Trash =Drafts =Checks =Spam =Archive
+mailboxes =INBOX =Sent =Trash =Drafts =Checks =spam =Archive =stratoplan
