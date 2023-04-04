@@ -45,6 +45,10 @@
 (define-key riffle-summary-mode-map "\C-h" nil)
 (define-key howm-view-contents-mode-map "\C-h" nil)
 
+(require 'recentf)
+(recentf-mode 1)
+(global-set-key (kbd "C-x M-f") 'recentf-open-files)
+
 (require 'restclient)
 (require 'misc)
 
