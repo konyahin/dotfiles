@@ -12,6 +12,9 @@
 ;; dired settings
 (setq dired-listing-switches "-lap")
 
+;; isearch settings
+(setq search-whitespace-regexp ".*")
+
 (defun knh-dired-find-file-other-frame ()
   "Open file in dired and move it in another emacs frame"
   (interactive)
@@ -54,6 +57,7 @@
 
 (require 'restclient)
 (require 'misc)
+(require 'hideshow)
 
 ;; custom functions and key bindings
 (global-set-key (kbd "M-f") 'forward-to-word)
