@@ -4,6 +4,7 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq help-window-select t)
 
 ;; abbrev mode
 (setq-default abbrev-mode t)
@@ -63,6 +64,9 @@
 (global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
+
+(define-key help-mode-map (kbd "n") 'next-line)
+(define-key help-mode-map (kbd "p") 'previous-line)
 
 (defun knh-new-line-below ()
   "Insert new line below, without breaking current line"
