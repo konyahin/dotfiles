@@ -37,6 +37,19 @@
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+
+(defun knh-set-buffer-name-md ()
+  "Rename md buffer to their header"
+  (interactive)
+  (save-excursion
+    (beginning-of-buffer)
+    (search-forward "# ")
+    (let ((beg (point)))
+      (move-end-of-line nil)
+      (rename-buffer
+       (string-trim (buffer-substring beg (point)))))))
+(add-hook 'markdown-mode-hook 'knh-set-buffer-name-md)
+
 (define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
 (define-key markdown-mode-map (kbd "M-<down>") 'markdown-next-visible-heading)
 
