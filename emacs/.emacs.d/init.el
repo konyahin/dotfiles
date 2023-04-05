@@ -49,6 +49,9 @@
 (recentf-mode 1)
 (global-set-key (kbd "C-x M-f") 'recentf-open-files)
 
+(require 'bs)
+(global-set-key (kbd "C-<f2>") 'bs-show)
+
 (require 'restclient)
 (require 'misc)
 
