@@ -58,6 +58,7 @@
 ;; custom functions and key bindings
 (global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 (defun knh-new-line-below ()
   "Insert new line below, without breaking current line"
