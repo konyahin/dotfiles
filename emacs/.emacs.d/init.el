@@ -1,6 +1,8 @@
 ;; base settings
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode 0)
+      (scroll-bar-mode 0)))
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
