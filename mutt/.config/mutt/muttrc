@@ -12,6 +12,7 @@ source ~/.config/mutt/aliases
 
 set mailcap_path = ~/.config/mutt/mailcap
 auto_view text/html
+alternative_order text/plain text/html
 
 set header_cache = ~/data/mail/cache
 
