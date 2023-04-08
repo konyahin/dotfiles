@@ -45,11 +45,11 @@
   (interactive)
   (save-excursion
     (beginning-of-buffer)
-    (search-forward "# ")
-    (let ((beg (point)))
-      (move-end-of-line nil)
-      (rename-buffer
-       (string-trim (buffer-substring beg (point)))))))
+    (if (search-forward "# " nil t)
+	(let ((beg (point)))
+	  (move-end-of-line nil)
+	  (rename-buffer
+	   (string-trim (buffer-substring beg (point))))))))
 (add-hook 'markdown-mode-hook 'knh-set-buffer-name-md)
 
 (define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
@@ -68,17 +68,18 @@
 (recentf-mode 1)
 (global-set-key (kbd "C-x M-f") 'recentf-open-files)
 
-(require 'bs)
-(global-set-key (kbd "C-<f2>") 'bs-show)
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
 
 (require 'restclient)
 (require 'misc)
 (require 'hideshow)
 
 ;; custom functions and key bindings
-(global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
+(global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
 
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
@@ -102,3 +103,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'dired-find-alternate-file 'disabled nil)
