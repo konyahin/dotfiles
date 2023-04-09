@@ -5,6 +5,7 @@ color header brightgreen black ^date
 
 # New mail is boldened:
 color index brightyellow black "~N"
+color index brightyellow black "~O"
 
 # use a for alias adding
 set alias_file = ~/.config/mutt/aliases
@@ -68,4 +69,4 @@ set record = "+Sent"
 set trash = "+Trash"
 set postponed = "+Drafts"
 
-mailboxes =INBOX =Sent =Trash =Drafts =Checks =spam =Archive =stratoplan
+mailboxes =INBOX =Sent =Trash =Drafts =Checks =spam =ports-obsd =misc-obsd =announce-obsd =dev-suckless =lists

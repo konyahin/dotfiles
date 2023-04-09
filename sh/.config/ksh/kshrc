@@ -27,7 +27,7 @@ alias e=$EDITOR
 alias v='bat'
 alias nb='newsboat && bookmark count'
 alias m='mutt'
-alias isync='mbsync -c ~/.config/.mbsyncrc -a'
+alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
 
 alias scratch='$EDITOR ~/data/notes/scratch.md'
 

@@ -1,0 +1,75 @@
+#!/usr/bin/env sh
+
+# MIT/X Consortium License
+# © 2023 Anton Konyahin <me@konyahin.xyz>
+#
+# Depends on mblaze: https://git.vuxu.org/mblaze/
+
+set -eu
+
+help () {
+    cat <<EOF
+$0 [-hcp] [maildir]
+   -h show this help
+   -c filter old mails (by default we look at new)
+   -p print all rules without filtering
+You should specify maildir with -c and -p options. You can use only one flag at time.
+EOF
+    exit 0
+}
+
+if [ -z "${1:-}" ]; then
+    help
+fi
+
+case "$1" in
+    "-h" )
+	help
+	;;
+    "-p" )
+	PRINT_ONLY=yes
+	MAIL_DIR=${2:-}
+	;;
+    "-c" )
+	MAIL_DIR=$2
+	MLIST_FILTER=-C
+	MAIL_DEST=cur
+	;;
+    * )
+	MAIL_DIR=$1
+	MLIST_FILTER=-N
+	MAIL_DEST=new
+	;;
+esac
+
+if [ -z "$MAIL_DIR" ]; then
+    echo "You should specify maildir path"
+    exit 1
+fi
+
+FILTER_FILE="$MAIL_DIR/.filter"
+if [ ! -e "$FILTER_FILE" ]; then
+    echo "You should have .filter file in maildir"
+    exit 1
+fi
+
+move () {
+    if [ -n "${PRINT_ONLY:-}" ]; then
+	printf "%s\t-> %s\n" "$1" "$2"
+    else
+	mlist "$MLIST_FILTER" "$MAIL_DIR/INBOX" |
+	    mpick -t "\"To\" =~~ \"$1\" ||
+	      	    \"Cc\" =~~ \"$1\" ||
+             	    \"From\" =~~ \"$1\"" |
+	    xargs -r -n1 -I {} mrefile -v {} "$MAIL_DIR/$2" |
+	    xargs -r -n1 -I {} mv {} "$MAIL_DIR/$2/$MAIL_DEST"
+    fi
+}
+
+# if file doesn't end with new line, we need second check
+while read -r line || [ -n "$line" ]; do
+    if [ -n "$line" ]; then
+	# shellcheck disable=SC2086
+	move $line
+    fi
+done < "$FILTER_FILE"

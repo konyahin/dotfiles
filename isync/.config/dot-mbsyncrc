@@ -20,7 +20,6 @@ Subfolders Verbatim
 Channel epik
 Far :epik-remote:
 Near :epik-local:
-Create Both
-Expunge Both
+Sync Pull
 Patterns *
 SyncState *
