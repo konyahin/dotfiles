@@ -61,7 +61,7 @@ move () {
 	    mpick -t "\"To\" =~~ \"$1\" ||
 	      	    \"Cc\" =~~ \"$1\" ||
              	    \"From\" =~~ \"$1\"" |
-	    xargs -r -n1 -I {} mrefile -v {} "$MAIL_DIR/$2" |
+	    mrefile -v "$MAIL_DIR/$2" |
 	    xargs -r -n1 -I {} mv {} "$MAIL_DIR/$2/$MAIL_DEST"
     fi
 }
