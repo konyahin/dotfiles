@@ -7,6 +7,11 @@ while true; do
     CHARGE=$(apm -l)
     DATE=$(date '+ %H:%M %d-%m-%Y')
 
-	xsetroot -name "🔋$CHARGE% $LAYOUT $DATE"
+    SONG=$(mpc current)
+    if [ -n "$SONG" ]; then
+	SONG="🎧 $SONG "
+    fi
+
+    xsetroot -name "$SONG🔋$CHARGE% $LAYOUT $DATE"
     sleep 0.2
 done
