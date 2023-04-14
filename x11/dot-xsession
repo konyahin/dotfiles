@@ -4,7 +4,7 @@ export LANGUAGE=ru_RU.UTF-8
 
 export ENV=$HOME/.config/ksh/kshrc
 
-setxkbmap -option ctrls:nocaps
+setxkbmap -option ctrl:nocaps
 
 xidle &
 status.sh &
