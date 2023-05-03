@@ -8,6 +8,11 @@
 (setq auto-save-default nil)
 (setq help-window-select t)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+(setq-default c-basic-offset 4)
+
 ;; abbrev mode
 (setq-default abbrev-mode t)
 (setq save-abbrevs 'silently)
@@ -72,9 +77,25 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
 (require 'restclient)
 (require 'misc)
 (require 'hideshow)
+
+(require 'eshell)
+(defalias 'e 'find-file)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/eshell-port-helper")
+(require 'eshell-port-helper)
+(defalias 'pdir 'eshell/port-jump-to-port-dir)
+(defalias 'psrc 'eshell/port-jump-to-src-dir)
+(defalias 'pjump 'eshell/port-jump)
+(defalias 'ppatch 'eshell/port-patch)
+(defalias 'punpatch 'eshell/port-unpatch)
+(defalias 'pmake 'eshell/port-make)
+(defalias 'pupdate 'eshell/port-update-patches)
 
 ;; custom functions and key bindings
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -96,7 +117,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(restclient howm markdown-mode)))
+ '(package-selected-packages '(expand-region restclient howm markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
