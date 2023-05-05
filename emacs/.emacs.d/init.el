@@ -112,6 +112,18 @@
   (newline-and-indent))
 (global-set-key (kbd "C-c RET") 'knh-new-line-below)
 
+;; borrowed from https://www.omarpolo.com/post/emacs-side-window.html
+(defun op/buffer-to-side-window ()
+  "Place the current buffer in the side window at the bottom."
+  (interactive)
+  (let ((buf (current-buffer)))
+    (display-buffer-in-side-window
+     buf '((window-height . 0.25)
+           (side . bottom)
+           (slot . -1)
+           (window-parameters . ((no-delete-other-windows t)))))
+    (delete-window)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
