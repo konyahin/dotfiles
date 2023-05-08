@@ -86,6 +86,9 @@
 
 (require 'eshell)
 (defalias 'e 'find-file)
+(setq eshell-destroy-buffer-when-process-dies nil)
+(setq eshell-visual-subcommands '())
+(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
 
 (add-to-list 'load-path "~/.emacs.d/elpa/eshell-port-helper")
 (require 'eshell-port-helper)
