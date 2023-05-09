@@ -108,12 +108,12 @@
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
 
-(defun knh-new-line-below ()
+(defun knh/new-line-below ()
   "Insert new line below, without breaking current line"
   (interactive)
   (end-of-line)
   (newline-and-indent))
-(global-set-key (kbd "C-c RET") 'knh-new-line-below)
+(global-set-key (kbd "C-c RET") 'knh/new-line-below)
 
 ;; borrowed from https://www.omarpolo.com/post/emacs-side-window.html
 (defun op/buffer-to-side-window ()
@@ -126,6 +126,13 @@
            (slot . -1)
            (window-parameters . ((no-delete-other-windows t)))))
     (delete-window)))
+
+(defun knh/next-input-mark ()
+  "Jump to next '<++>' and delete it."
+  (interactive)
+  (search-forward "<++>")
+  (delete-char -4))
+(global-set-key (kbd "C-c C-SPC") 'knh/next-input-mark)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
