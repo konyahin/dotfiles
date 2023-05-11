@@ -2,11 +2,11 @@
 (if (display-graphic-p)
     (progn
       (tool-bar-mode 0)
-      (scroll-bar-mode 0)))
+      (scroll-bar-mode 0))
+  (menu-bar-mode 0))
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(setq help-window-select t)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
