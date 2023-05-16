@@ -8,6 +8,9 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; can use s-<arrow> for window switching
+(windmove-default-keybindings)
+
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
@@ -101,6 +104,7 @@
 (defalias 'pupdate 'eshell/port-update-patches)
 
 ;; custom functions and key bindings
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 (global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
