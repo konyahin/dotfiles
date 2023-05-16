@@ -8,6 +8,8 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+(setq sentence-end-double-space nil)
+
 ;; can use s-<arrow> for window switching
 (windmove-default-keybindings)
 
