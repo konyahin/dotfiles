@@ -31,6 +31,7 @@ https://d-s.sh/index.xml
 https://sqrtminusone.xyz/posts/index.xml
 https://www.omarpolo.com/rss.xml
 https://lucasfcosta.com/feed.xml
+https://phaazon.net/blog/feed
 
 https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+issuetype+%3D+JEP+AND+resolution+%3D+Unresolved+ORDER+BY+priority+DESC%2C+updated+DESC&tempMax=1000
 
@@ -52,3 +53,5 @@ https://old.reddit.com/r/emacs.rss "~/r/emacs"
 
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 https://devzen.ru/feed/
+
+https://github.com/tmewett/BrogueCE/releases.atom
