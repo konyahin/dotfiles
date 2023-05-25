@@ -44,6 +44,10 @@ alias en='$EDITOR "$(find ~/data/notes -type f | fzf)"'
 alias vn='v "$(find ~/data/notes -type f | fzf)"'
 alias es='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 
+alias cvsupdate='cvs -q up -Pd -A'
+alias cvsdiff='cvs diff -uNp'
+alias cvsrestore='cvs update -C'
+
 me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
 }
