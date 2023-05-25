@@ -13,11 +13,6 @@
 ;; can use s-<arrow> for window switching
 (windmove-default-keybindings)
 
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
-(setq-default c-basic-offset 4)
-
 ;; abbrev mode
 (setq-default abbrev-mode t)
 (setq save-abbrevs 'silently)
@@ -145,7 +140,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-operandi))
+ '(custom-enabled-themes '(modus-vivendi))
  '(package-selected-packages '(expand-region restclient howm markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
