@@ -100,6 +100,9 @@
 (defalias 'pmake 'eshell/port-make)
 (defalias 'pupdate 'eshell/port-update-patches)
 
+(require 'which-key)
+(which-key-mode)
+
 ;; custom functions and key bindings
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -141,7 +144,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(modus-vivendi))
- '(package-selected-packages '(expand-region restclient howm markdown-mode)))
+ '(package-selected-packages '(which-key expand-region restclient howm markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
