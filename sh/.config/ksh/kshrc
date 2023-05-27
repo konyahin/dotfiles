@@ -28,6 +28,8 @@ alias v='bat'
 alias nb='newsboat && bookmark count'
 alias m='mutt'
 alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
+alias l='ls -p -A'
+alias lr='l -R'
 
 alias scratch='$EDITOR ~/data/notes/scratch.md'
 
