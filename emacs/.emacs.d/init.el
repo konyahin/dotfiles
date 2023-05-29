@@ -10,6 +10,8 @@
 
 (setq sentence-end-double-space nil)
 
+(setq inhibit-startup-screen t)
+
 ;; can use s-<arrow> for window switching
 (windmove-default-keybindings)
 
@@ -136,6 +138,19 @@
   (delete-char -4))
 (global-set-key (kbd "C-c C-SPC") 'knh/next-input-mark)
 
+;; emacs as shell-editor
+(eshell)
+(defun knh/jump-to-shell ()
+  "Jump to exist shell buffer, or open new"
+  (interactive)
+  (let ((dir (eshell/pwd)))
+    (with-current-buffer (if (get-buffer "*eshell*")
+			     (switch-to-buffer "*eshell*")
+			   (eshell))
+      (message dir)
+      (eshell/cd dir))))
+(global-set-key (kbd "C-x j") 'knh/jump-to-shell)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -150,3 +165,4 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'dired-find-alternate-file 'disabled nil)
+
