@@ -73,9 +73,7 @@
 (recentf-mode 1)
 (global-set-key (kbd "C-x M-f") 'recentf-open-files)
 
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
+(fido-mode t)
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
