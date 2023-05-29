@@ -12,6 +12,8 @@
 
 (setq inhibit-startup-screen t)
 
+(setq vc-follow-symlinks t)
+
 ;; can use s-<arrow> for window switching
 (windmove-default-keybindings)
 
