@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+
 export PATH=$PATH:~/.bin:~/.local/bin
 export LC_ALL=ru_RU.UTF-8
 export LANG=ru_RU.UTF-8
@@ -49,6 +51,17 @@ alias es='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
+
+j () {
+  cd $(cat <<EOF |
+project /home/anton/project
+dotfiles /home/anton/dotfiles
+ports /usr/ports
+sources /usr/src
+notes /home/anton/data/notes
+EOF
+fzf --with-nth=1 --preview='ls {2}' | awk '{print $2}')
+}
 
 me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
