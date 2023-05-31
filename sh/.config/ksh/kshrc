@@ -8,7 +8,7 @@ export LANGUAGE=ru_RU.UTF-8
 export NAME='Anton Konyahin'
 export EMAIL='me@konyahin.xyz'
 
-export EDITOR='emacsclient -t'
+export EDITOR='kak'
 export ALTERNATE_EDITOR='emacs -nw'
 export PAGER=less
 export BROWSER=open
