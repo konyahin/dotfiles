@@ -52,16 +52,12 @@ alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
 
-j () {
-  cd $(cat <<EOF |
-project /home/anton/project
-dotfiles /home/anton/dotfiles
-ports /usr/ports
-sources /usr/src
-notes /home/anton/data/notes
-EOF
-fzf --with-nth=1 --preview='ls {2}' | awk '{print $2}')
+fzf-in () {
+    found=$(find . -not -path "*.git*" | fzf)
+    [ -d "$found" ] && cd "$found" && return
+    [ -f "$found" ] && $EDITOR "$found" && return
 }
+alias /=fzf-in
 
 me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
