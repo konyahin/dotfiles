@@ -8,4 +8,5 @@ setxkbmap -option ctrl:nocaps
 
 xidle &
 status.sh &
+dunst &
 exec dwm
