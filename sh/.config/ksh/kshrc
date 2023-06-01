@@ -58,6 +58,7 @@ fzf-in () {
     [ -f "$found" ] && $EDITOR "$found" && return
 }
 alias /=fzf-in
+alias //='cd ~/; /'
 
 me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
