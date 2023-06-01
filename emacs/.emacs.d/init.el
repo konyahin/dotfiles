@@ -111,6 +111,7 @@
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 (global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
 
+(global-set-key (kbd "M-<f5>") 'compile)
 (global-set-key (kbd "<f5>") 'recompile)
 
 (define-key help-mode-map (kbd "n") 'next-line)
