@@ -64,6 +64,10 @@ me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
 }
 
+cheat () {
+    curl "cheat.sh/$1" | bat
+}
+
 alias music-dl='youtube-dl -f "bestaudio[ext=m4a]"'
 
 alias reload='. ~/.config/ksh/kshrc'
