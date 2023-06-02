@@ -34,6 +34,7 @@ alias l='ls -p -A'
 alias lr='l -R'
 
 alias scratch='$EDITOR ~/data/notes/scratch.md'
+alias todo='$EDITOR ~/data/planing/todo.md'
 
 alias esh='$EDITOR ~/.config/ksh/kshrc'
 alias evi='$EDITOR ~/.nexrc'
