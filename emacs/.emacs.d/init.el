@@ -21,11 +21,11 @@
 (setq-default abbrev-mode t)
 (setq save-abbrevs 'silently)
 
-;; dired settings
-(setq dired-listing-switches "-lap")
-
 ;; isearch settings
 (setq search-whitespace-regexp ".*")
+
+;; dired settings
+(setq dired-listing-switches "-lap")
 
 (defun knh-dired-find-file-other-frame ()
   "Open file in dired and move it in another emacs frame"
@@ -45,6 +45,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(package-install 'markdown-mode)
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
@@ -64,6 +65,7 @@
 (define-key markdown-mode-map (kbd "M-<up>") 'markdown-previous-visible-heading)
 (define-key markdown-mode-map (kbd "M-<down>") 'markdown-next-visible-heading)
 
+(package-install 'howm)
 (require 'howm)
 (setq howm-file-name-format "%Y-%m-%d-%H%M%S.md")
 (setq howm-template "# %title%cursor\n\n%file\n\n")
@@ -79,9 +81,11 @@
 
 (fido-mode t)
 
+(package-install 'expand-region)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(package-install 'restclient)
 (require 'restclient)
 (require 'misc)
 (require 'hideshow)
@@ -102,8 +106,10 @@
 (defalias 'pmake 'eshell/port-make)
 (defalias 'pupdate 'eshell/port-update-patches)
 
+(package-install 'which-key)
 (require 'which-key)
-(which-key-mode)
+(setq which-key-idle-delay 0.5)
+(which-key-mode t)
 
 ;; custom functions and key bindings
 (global-set-key (kbd "M-o") 'other-window)
