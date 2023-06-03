@@ -73,6 +73,11 @@ alias music-dl='youtube-dl -f "bestaudio[ext=m4a]"'
 
 alias reload='. ~/.config/ksh/kshrc'
 
+whatabout () {
+    $PAGER "/usr/local/share/doc/pkg-readmes/$1"
+}
+set -A complete_whatabout -- $(ls /usr/local/share/doc/pkg-readmes/)
+
 # autocomplete
 set -A complete_git -- pull push clone checkout status commit clean restore diff
 set -A complete_sttemp -- $(ls ~/project/templates)
