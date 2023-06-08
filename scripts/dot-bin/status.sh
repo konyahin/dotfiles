@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -e
-
 while true; do
     LAYOUT=$(setxkbmap -query | grep layout | awk '{print $2}')
     CHARGE=$(apm -l)
