@@ -6,7 +6,8 @@ export ENV=$HOME/.config/ksh/kshrc
 
 setxkbmap -option ctrl:nocaps
 
-xidle &
+xidle -delay 5 -sw -program "/usr/X11R6/bin/xlock -mode matrix" -timeout 300 &
 status.sh &
 dunst &
+unclutter &
 exec dwm
