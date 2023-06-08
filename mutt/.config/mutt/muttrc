@@ -71,4 +71,18 @@ set record = "+Sent"
 set trash = "+Trash"
 set postponed = "+Drafts"
 
-mailboxes =INBOX =Sent =Trash =Drafts =Checks =spam =tech-obsd =ports-obsd =misc-obsd =announce-obsd =dev-suckless =hackers-suckless =lists =gnu
+mailboxes =INBOX \
+	  =tech-obsd \
+	  =ports-obsd \
+	  =misc-obsd \
+	  =announce-obsd \
+	  =dev-suckless \
+	  =hackers-suckless \
+	  =gnu \
+	  =github \
+	  =lists \
+	  =Sent \
+	  =Checks \
+	  =Drafts \
+	  =spam \
+	  =Trash
