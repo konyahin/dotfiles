@@ -1,4 +1,5 @@
 " settings
+set altnotation
 set autoindent
 set expandtab
 set ruler
@@ -36,6 +37,10 @@ map ;d wb"zyw:Atag "zp
 " snippets
 ab ;f for(<++>){	<++>}
 
-
 " shell check
 map ;c :!clear && shellcheck %
+
+" file manager
+map ;xd :e ls;xg
+map ;xg o:%d:r !ls -p
+map ; wb"zyw:C:cd! "zp;xg
