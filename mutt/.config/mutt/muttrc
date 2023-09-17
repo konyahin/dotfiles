@@ -61,7 +61,7 @@ unset mark_old
 
 # Settings for my mailbox
 set folder = ~/data/mail/fastmail
-set smtp_url = "smtps://me@konyahin.xyz@mail.konyahin.xyz:465"
+set smtp_url = "smtp://me@konyahin.xyz@mail.konyahin.xyz:25"
 set smtp_pass = "`pass mail/epik/password`"
 set from = "me@konyahin.xyz"
 set realname = "Anton Konyahin"
