@@ -2,12 +2,10 @@ https://lukesmith.xyz/rss.xml "~Luke Smith"
 http://feeds.akkartik.name/kartiks-scrapbook?format=xml
 https://danluu.com/atom.xml "~Danluu blog"
 https://suckless.org/atom.xml
-https://calibre-ebook.com/changelog.rss
 https://nullprogram.com/feed/
 https://ounapuu.ee/posts/index.xml
 https://blog.benjojo.co.uk/rss.xml
 https://newsboat.org/news.atom "~Newsboat"
-https://feeds2.feedburner.com/typepad/krisdedecker/lowtechmagazineenglish
 https://hackaday.com/blog/feed/
 https://briancallahan.net/blog/feed.xml
 https://undeadly.org/cgi?action=rss
@@ -48,3 +46,5 @@ https://old.reddit.com/r/emacs.rss "~/r/emacs"
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 
 https://github.com/tmewett/BrogueCE/releases.atom
+
+https://merveilles.town/@prahou.rss
