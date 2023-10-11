@@ -1,5 +1,5 @@
 IMAPAccount epik
-Host mail.konyahin.xyz
+Host konyahin.xyz
 Port 993
 UserCmd "pass mail/epik/login"
 PassCmd "pass mail/epik/password"
