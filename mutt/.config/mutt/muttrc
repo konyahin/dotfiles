@@ -48,9 +48,6 @@ macro index C "<enter><exit>s+Checks\n"
 macro index G "!mbsync -c ~/.config/.mbsyncrc -a\n" "Receive new mails"
 bind attach <return> view-mailcap
 
-# RFC 3676 f=f
-set text_flowed
-
 # disable confirmation
 set delete
 unset confirmappend
