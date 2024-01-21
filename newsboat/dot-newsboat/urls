@@ -23,7 +23,6 @@ https://zserge.com/rss.xml
 https://mizik.eu/feed.xml
 https://j3s.sh/feed.atom
 https://howardism.org/index.xml
-https://d-s.sh/index.xml
 https://sqrtminusone.xyz/posts/index.xml
 https://www.omarpolo.com/rss.xml
 https://lucasfcosta.com/feed.xml
@@ -42,6 +41,7 @@ https://old.reddit.com/r/openbsd.rss "~/r/openbsd"
 https://old.reddit.com/r/C_Programming.rss "~/r/c"
 https://old.reddit.com/r/lisp.rss "~/r/lisp"
 https://old.reddit.com/r/emacs.rss "~/r/emacs"
+https://old.reddit.com/r/golang.rss "~/r/golang"
 
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 
