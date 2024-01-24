@@ -155,9 +155,11 @@
   "Jump to exist shell buffer, or open new"
   (interactive)
   (let ((dir (eshell/pwd)))
-    (with-current-buffer (if (get-buffer "*eshell*")
-			     (switch-to-buffer "*eshell*")
-			   (eshell))
-      (message dir)
-      (eshell/cd dir))))
+	(eshell)
+    (message dir)
+    (eshell/cd dir)
+	;; update shell prompt
+	(eshell-interrupt-process)))
 (global-set-key (kbd "C-x j") 'knh/jump-to-shell)
+
+(server-start)
