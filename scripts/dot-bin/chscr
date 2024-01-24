@@ -9,8 +9,8 @@ fi
 
 case "$1" in
 	"vga"      )
-		xrandr --output VGA-1 --primary --mode 1920x1080;;
+		xrandr --output VGA-1 --auto --output LVDS-1 --off;;
 	"lvds" | * )
-		xrandr --output LVDS-1 --primary --mode 1366x768;;
+		xrandr --output LVDS-1 --auto --output VGA-1 --off;;
 esac
 
