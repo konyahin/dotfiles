@@ -161,5 +161,3 @@
 	;; update shell prompt
 	(eshell-interrupt-process)))
 (global-set-key (kbd "C-x j") 'knh/jump-to-shell)
-
-(server-start)
