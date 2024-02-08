@@ -53,6 +53,9 @@ alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
 
+alias gtd-d="sttemp gtd-daily | less"
+alias gtd-w="sttemp gtd-weekly | less"
+
 fzf-in () {
     found=$(find . -not -path "*.git*" | fzf)
     [ -d "$found" ] && cd "$found" && return
