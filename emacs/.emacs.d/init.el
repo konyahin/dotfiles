@@ -161,3 +161,6 @@
 	;; update shell prompt
 	(eshell-interrupt-process)))
 (global-set-key (kbd "C-x j") 'knh/jump-to-shell)
+
+(package-install 'todotxt)
+(require 'todotxt)
