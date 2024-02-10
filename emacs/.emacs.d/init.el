@@ -164,3 +164,5 @@
 
 (package-install 'todotxt)
 (require 'todotxt)
+(global-set-key (kbd "C-x t") 'todotxt)
+;you should set todotxt-file
