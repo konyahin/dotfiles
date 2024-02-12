@@ -200,7 +200,13 @@
   (interactive)
   (knh/todotxt-add-text "+waiting"))
 
+(defun knh/todotxt-mark-active ()
+  "Add +active tag on task"
+  (interactive)
+  (knh/todotxt-add-text "+active"))
+
 (define-key todotxt-mode-map (kbd "I") 'knh/todotxt-filter-out-all-lists)
 (define-key todotxt-mode-map (kbd "T") 'knh/todotxt-move-to-todo)
 (define-key todotxt-mode-map (kbd "M") 'knh/todotxt-move-to-maybe)
 (define-key todotxt-mode-map (kbd "W") 'knh/todotxt-move-to-waiting)
+(define-key todotxt-mode-map (kbd "A") 'knh/todotxt-mark-active)
