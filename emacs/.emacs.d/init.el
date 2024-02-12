@@ -166,3 +166,41 @@
 (require 'todotxt)
 (global-set-key (kbd "C-x t") 'todotxt)
 ;you should set todotxt-file
+
+;; my hacks for todotxt
+(defun knh/todotxt-filter-out-all-lists ()
+  "Hide all tasks, who already tagged with lists"
+  (interactive)
+  (todotxt-show-incomplete)
+  (cl-flet
+	  ((hide (tag) (todotxt-filter (eval `(lambda () (todotxt-current-line-match ,tag))))))
+	(mapcar #'hide '("+maybe" "+todo" "+waiting"))))
+
+(defun knh/todotxt-add-text (text)
+  "Add text at the end of task"
+  (let ((new-text (concat (todotxt-get-current-line-as-string) " " text)))
+    (setq inhibit-read-only 't)
+    (todotxt-delete-line)
+    (insert new-text)
+    (if todotxt-save-after-change (save-buffer))
+    (setq inhibit-read-only nil)))
+
+(defun knh/todotxt-move-to-todo ()
+  "Add +todo tag on task"
+  (interactive)
+  (knh/todotxt-add-text "+todo"))
+
+(defun knh/todotxt-move-to-maybe ()
+  "Add +maybe tag on task"
+  (interactive)
+  (knh/todotxt-add-text "+maybe"))
+
+(defun knh/todotxt-move-to-waiting ()
+  "Add +waiting tag on task"
+  (interactive)
+  (knh/todotxt-add-text "+waiting"))
+
+(define-key todotxt-mode-map (kbd "I") 'knh/todotxt-filter-out-all-lists)
+(define-key todotxt-mode-map (kbd "T") 'knh/todotxt-move-to-todo)
+(define-key todotxt-mode-map (kbd "M") 'knh/todotxt-move-to-maybe)
+(define-key todotxt-mode-map (kbd "W") 'knh/todotxt-move-to-waiting)
