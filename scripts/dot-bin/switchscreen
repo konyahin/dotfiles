@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+set -e
+
+CUR_SCREEN=$(xrandr --listactivemonitors | tail -1 | awk '{print $NF}')
+
+if [ "$CUR_SCREEN" = "VGA-1" ]; then
+    SCREEN=LVDS-1
+else
+	SCREEN=VGA-1
+fi
+
+xrandr --output "$SCREEN" --auto --output "$CUR_SCREEN" --off
