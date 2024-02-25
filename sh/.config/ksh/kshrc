@@ -33,9 +33,6 @@ alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
 alias l='ls -p -A'
 alias lr='l -R'
 
-alias scratch='$EDITOR ~/data/notes/scratch.md'
-alias todo='$EDITOR ~/data/planing/todo.md'
-
 alias esh='$EDITOR ~/.config/ksh/kshrc'
 alias evi='$EDITOR ~/.nexrc'
 alias evim="$EDITOR $MYVIMRC"
@@ -45,9 +42,9 @@ alias enbu='$EDITOR ~/.newsboat/urls'
 export FZF_DEFAULT_OPTS="--preview='bat {}'"
 alias ef='$EDITOR $(find . | fzf)'
 alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
-alias en='$EDITOR "$(find ~/data/notes -type f | fzf)"'
-alias vn='v "$(find ~/data/notes -type f | fzf)"'
-alias es='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
+alias en='$EDITOR "$(find ~/public_gopher -type f | fzf)"'
+alias vn='v "$(find ~/public_gopher -type f | fzf)"'
+alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 
 alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
@@ -55,6 +52,8 @@ alias cvsrestore='cvs update -C'
 
 alias gtd-d="sttemp gtd-daily | less"
 alias gtd-w="sttemp gtd-weekly | less"
+
+alias notes="vf1 localhost/1/~anton"
 
 fzf-in () {
     found=$(find . -not -path "*.git*" | fzf)

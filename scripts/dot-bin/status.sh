@@ -14,7 +14,7 @@ while true; do
     #SONG=$(mpc current)
     [ -n "$SONG" ] && SONG="🎧 $SONG "
 
-    TASK=$(grep "+active" /home/anton/data/notes/todo.txt | grep -v "^x")
+    TASK=$(grep "+active" /home/anton/public_gopher/todo.txt | grep -v "^x")
     [ -n "$TASK" ] && TASK="🔵 $(clean_task "$TASK")"
 
     xsetroot -name "$TASK $SONG🔋$CHARGE% $LAYOUT $DATE"
