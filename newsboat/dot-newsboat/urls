@@ -26,10 +26,8 @@ https://howardism.org/index.xml
 https://sqrtminusone.xyz/posts/index.xml
 https://www.omarpolo.com/rss.xml
 https://lucasfcosta.com/feed.xml
-https://phaazon.net/blog/feed
+https://strongly-typed-thoughts.net/blog/feed
 http://jsomers.net/blog/feed
-
-https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+issuetype+%3D+JEP+AND+resolution+%3D+Unresolved+ORDER+BY+priority+DESC%2C+updated+DESC&tempMax=1000
 
 https://news.ycombinator.com/rss
 https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
