@@ -7,7 +7,7 @@ if [ "$#" -lt 2 ]; then
     exit 1
 fi
 
-if [ "$1" == "-n" ]; then
+if [ "$1" = "-n" ]; then
     NO_MAP=true
     shift
 fi
@@ -17,12 +17,12 @@ link () {
     LINE=$2
     ARGS=$3
 
-    printf "[%3d] " $LINK
+    printf "[%3d] " "$LINK"
     echo "$LINE" | awk -F '\t' '{print substr($1, 2)}'
 
     KEFIR_CALL="$(echo "$LINE" | awk -F '\t' '{printf "%s %s", $3, $2}')"
-    COMMAND="$LINK shell ./skefir $ARGS $KEFIR_CALL"
-    echo "\n$COMMAND" >> "$LESSKEY_FILE"
+    COMMAND="$LINK shell skefir $ARGS $KEFIR_CALL"
+    printf "%s\n" "$COMMAND" >> "$LESSKEY_FILE"
 }
 
 viewer () {
@@ -50,7 +50,7 @@ viewer () {
 LESSKEY_FILE=$(mktemp -t skefir.XXXXXX)
 echo "#command" > "$LESSKEY_FILE"
 
-TEXT=$(printf "$2\r\n" | nc "$1" 70)
+TEXT=$(printf "%s\r\n" "$2" | nc "$1" 70)
 [ -z "${NO_MAP:-}" ] && TEXT="$(echo "$TEXT" | viewer)"
 echo "$TEXT" | less --lesskey-src="$LESSKEY_FILE"
 
