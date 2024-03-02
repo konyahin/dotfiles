@@ -46,6 +46,8 @@ alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
 
+alias gpush='git remote | xargs -n 1 git push'
+
 alias gtd-d="sttemp gtd-daily | less"
 alias gtd-w="sttemp gtd-weekly | less"
 
