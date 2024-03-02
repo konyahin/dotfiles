@@ -1,6 +1,6 @@
 # -*- mode: sh -*-
 
-export PATH=$PATH:~/.bin:~/.local/bin
+export PATH=/usr/local/bin:$PATH:~/.bin:~/.local/bin
 export LC_ALL=ru_RU.UTF-8
 export LANG=ru_RU.UTF-8
 export LANGUAGE=ru_RU.UTF-8
@@ -20,12 +20,9 @@ HISTSIZE=1000
 HISTFILE=$HOME/.ksh_history
 PS1='${USER}@\h:\W\$ '
 
-# vim
-export MYVIMRC='~/.config/vimrc'
-export VIMINIT='source $MYVIMRC'
-
 alias z='zathura'
 alias e=$EDITOR
+alias em=$ALTERNATE_EDITOR
 alias v='bat'
 alias nb='newsboat && bookmark count'
 alias m='mutt'
@@ -35,7 +32,6 @@ alias lr='l -R'
 
 alias esh='$EDITOR ~/.config/ksh/kshrc'
 alias evi='$EDITOR ~/.nexrc'
-alias evim="$EDITOR $MYVIMRC"
 alias enb='$EDITOR ~/.newsboat/config'
 alias enbu='$EDITOR ~/.newsboat/urls'
 
