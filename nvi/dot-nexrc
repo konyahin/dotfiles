@@ -10,9 +10,9 @@ set iclower
 set shiftwidth=4
 set tabstop=4
 
-" vim: good parts
-map gg 1G
-map ZQ :q!
+map g 1G
+map q :q
+map Q :q!
 map zz mzz.`z
 
 " movements
