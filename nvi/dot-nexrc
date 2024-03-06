@@ -10,14 +10,14 @@ set iclower
 set shiftwidth=4
 set tabstop=4
 
-map g 1G
 map q :q
 map Q :q!
-map zz mzz.`z
 
 " movements
-map ;n /<++>df>i
-ab  ;n /<++>df>i
+map g 1G
+map zz mzz.`z
+map ;n /^[{}]
+map ;p ?^[{}]
 
 " open current word in man
 map ;m wb"zyw:C!man "zp
@@ -33,9 +33,6 @@ map ;w {j!}fold -s -w 80
 
 " go to definition
 map ;d wb"zyw:Atag "zp
-
-" snippets
-ab ;f for(<++>){	<++>}
 
 " shell check
 map ;c :!clear && shellcheck %
