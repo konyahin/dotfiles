@@ -20,12 +20,12 @@ HISTSIZE=1000
 HISTFILE=$HOME/.ksh_history
 PS1='${USER}@\h:\W\$ '
 
-alias z='zathura'
-alias e=$EDITOR
-alias em=$ALTERNATE_EDITOR
-alias v='bat'
+alias z=zathura
+alias e='$EDITOR'
+alias em='$ALTERNATE_EDITOR'
+alias v=nview
 alias nb='newsboat && bookmark count'
-alias m='mutt'
+alias m=mutt
 alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
 alias l='ls -p -A'
 alias lr='l -R'
