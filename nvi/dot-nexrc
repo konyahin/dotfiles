@@ -18,8 +18,8 @@ map g 1G
 map zz mzz.`z
 map ;n /^[{}]
 map ;p ?^[{}]
-map j 20jzz
-map k 20kzz
+map ;j 20jzz
+map ;k 20kzz
 
 " open current word in man
 map ;m wb"zyw:C!man "zp
