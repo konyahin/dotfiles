@@ -1,5 +1,7 @@
 # -*- mode: sh -*-
 
+. ~/.profile
+
 export PATH=/usr/local/bin:$PATH:~/.bin:~/.local/bin
 export LC_ALL=ru_RU.UTF-8
 export LANG=ru_RU.UTF-8
