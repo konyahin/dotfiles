@@ -2,13 +2,14 @@
 
 set -eu
 
-TEMP_CONFIG="$(mktemp)"
+TEMP_CONFIG="$(mktemp -t igit.XXXXXX)"
 
 tee <<EOF > "$TEMP_CONFIG"
 alias commit='git commit -m'
 alias push='git remote | xargs -n 1 git push'
-alias log='git log'
-PS1='$(git status -s)\n\W:$(git branch --show-current)\$ '
+alias log='git log --oneline'
+alias diff='git diff'
+PS1='$(git -c color.ui=always status -s)\n\W:$(git branch --show-current)\$ '
 
 echo "gggiiittt started"
 EOF
