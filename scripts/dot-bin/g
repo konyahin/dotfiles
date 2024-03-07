@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+set -eu
+
+TEMP_CONFIG="$(mktemp)"
+
+tee <<EOF > "$TEMP_CONFIG"
+alias commit='git commit -m'
+alias push='git remote | xargs -n 1 git push'
+alias log='git log'
+PS1='$(git status -s)\n\W:$(git branch --show-current)\$ '
+
+echo "gggiiittt started"
+EOF
+
+echo "rm -f $TEMP_CONFIG" >> "$TEMP_CONFIG"
+
+export ENV="$TEMP_CONFIG"
+ksh -i
