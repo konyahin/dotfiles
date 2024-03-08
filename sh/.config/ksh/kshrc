@@ -67,7 +67,7 @@ me () {
     $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
 }
 
-jproject () {
+jp () {
     projects=$(find ~/project/ -type d -maxdepth 1 -mindepth 1 ! -name konyahin)
     personal=$(find ~/project/konyahin -type d -maxdepth 1 -mindepth 1)
     selected=$(echo "$projects" "$personal" | fzf)
