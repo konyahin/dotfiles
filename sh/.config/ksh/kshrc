@@ -37,21 +37,20 @@ alias evi='$EDITOR ~/.nexrc'
 alias enb='$EDITOR ~/.newsboat/config'
 alias enbu='$EDITOR ~/.newsboat/urls'
 
-export FZF_DEFAULT_OPTS="--preview='bat {}'"
 alias ef='$EDITOR $(find . | fzf)'
 alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
 alias en='$EDITOR "$(find ~/public_gopher -type f | fzf)"'
 alias vn='v "$(find ~/public_gopher -type f | fzf)"'
 alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 
+alias escratch='$EDITOR $SCRATCH_PATH'
+alias etodo='$EDITOR $TODO_PATH'
+
 alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
 
 alias gpush='git remote | xargs -n 1 git push'
-
-alias gtd-d="sttemp gtd-daily | less"
-alias gtd-w="sttemp gtd-weekly | less"
 
 alias notes="vf1 localhost/1/~anton"
 
@@ -77,8 +76,6 @@ jp () {
 cheat () {
     curl "cheat.sh/$1" | bat
 }
-
-alias music-dl='youtube-dl -f "bestaudio[ext=m4a]"'
 
 alias reload='. ~/.config/ksh/kshrc'
 
