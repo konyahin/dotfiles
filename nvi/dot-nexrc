@@ -9,6 +9,7 @@ set windowname
 set iclower
 set shiftwidth=4
 set tabstop=4
+set wl=79
 
 map q :q
 map Q :q!
