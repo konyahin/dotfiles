@@ -74,7 +74,7 @@ jp () {
 }
 
 cheat () {
-    curl "cheat.sh/$1" | bat
+    curl "cheat.sh/$1" | less -r
 }
 
 alias reload='. ~/.config/ksh/kshrc'
