@@ -96,16 +96,6 @@
 (setq eshell-visual-subcommands '())
 (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
 
-(add-to-list 'load-path "~/.emacs.d/elpa/eshell-port-helper")
-(require 'eshell-port-helper)
-(defalias 'pdir 'eshell/port-jump-to-port-dir)
-(defalias 'psrc 'eshell/port-jump-to-src-dir)
-(defalias 'pjump 'eshell/port-jump)
-(defalias 'ppatch 'eshell/port-patch)
-(defalias 'punpatch 'eshell/port-unpatch)
-(defalias 'pmake 'eshell/port-make)
-(defalias 'pupdate 'eshell/port-update-patches)
-
 (package-install 'which-key)
 (require 'which-key)
 (setq which-key-idle-delay 0.5)
