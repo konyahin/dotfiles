@@ -19,14 +19,19 @@ map g 1G
 map zz mzz.`z
 map ;n /^[{}]
 map ;p ?^[{}]
-map ;j 20jzz
-map ;k 20kzz
+
+" macros
+map copy_word; wb"zyw
+map insert_word; "zp
+map insert_command; :o
+map temp_buffer; :E /tmp:bg
+map delete_all; 1GdG
 
 " open current word in man
-map ;m wb"zyw:C!man "zp
+map ;m copy_word;temp_buffer;insert_command;read !man insert_word;A| col -b1G
 
 " fzf open files
-map ;o ::!ls -R | fzf >> %:editIEdit :bg
+map ;o insert_command;:!ls -R | fzf >> %:eIEdit :bg
 
 " fzf git grep TODO
 map ;g wb"zyw:C:!git grep "zpA | fzf >> %
@@ -35,15 +40,10 @@ map ;g wb"zyw:C:!git grep "zpA | fzf >> %
 map ;w {j!}fold -s -w 80
 
 " go to definition
-map ;d wb"zyw:Atag "zp
+map ;d copy_word;insert_command;tag insert_word;
 
 " shell check
 map ;c :!clear && shellcheck %
-
-" file manager
-map ;xd :e ls;xg
-map ;xg o:%d:r !ls -p
-map ; wb"zyw:C:cd! "zp;xg
 
 " Ru/En layout. Based on VimHelp-*russian-keymap* and
 " https://stackoverflow.com/questions/17905207/ideavim-and-russian-layout
