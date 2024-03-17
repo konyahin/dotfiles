@@ -1,0 +1,3 @@
+[submodule "nvimodes"]
+	path = nvimodes
+	url = git@github.com:konyahin/nvimodes.git
