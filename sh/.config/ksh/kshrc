@@ -44,7 +44,7 @@ alias vn='v "$(find ~/public_gopher -type f | fzf)"'
 alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
 
 alias escratch='$EDITOR $SCRATCH_PATH'
-alias etodo='$EDITOR $TODO_PATH'
+alias etodo='$EDITOR -c "source ~/.local/share/nvi/todotxt" $TODO_PATH'
 
 alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
