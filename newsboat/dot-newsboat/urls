@@ -18,7 +18,6 @@ https://www.cambus.net/atom.xml
 https://dataswamp.org/~solene/rss.xml
 https://computer.rip/rss.xml
 https://konyahin.xyz/index.xml
-https://www.idontplaydarts.com/feed/
 https://zserge.com/rss.xml
 https://mizik.eu/feed.xml
 https://j3s.sh/feed.atom
@@ -35,6 +34,7 @@ https://tratt.net/laurie/blog/blog.rss
 https://foojay.io/feed/
 https://ismailefe.org/feed.xml
 https://feeds.libsyn.com/499093/rss
+https://amodernist.com/all.atom
 
 https://news.ycombinator.com/rss
 https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
@@ -45,7 +45,6 @@ https://old.reddit.com/r/coding.rss "~/r/coding"
 https://old.reddit.com/r/openbsd.rss "~/r/openbsd"
 https://old.reddit.com/r/C_Programming.rss "~/r/c"
 https://old.reddit.com/r/lisp.rss "~/r/lisp"
-https://old.reddit.com/r/emacs.rss "~/r/emacs"
 
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 

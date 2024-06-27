@@ -20,7 +20,6 @@ set header_cache = ~/data/mail/cache
 set sort = threads
 # hide plus sign if line in mail too long
 set markers = no
-set mark_old = no
 
 # don't go to next message automatically
 set pager_stop
@@ -28,24 +27,9 @@ set pager_stop
 set date_format = "%d/%m"
 set index_format = "[%Z] %D %-15.15F %s"
 
-# sidebar settings
-set sidebar_visible = yes
-set sidebar_width = 16
-color sidebar_new color221 color233
-set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
-
-bind index,pager <Esc><Tab> next-unread-mailbox
-
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
-
 # Ctrl + l for view all url from mail
 macro pager \cl |urlview\n
 macro index d "<enter><exit>s+Trash\n"
-macro index C "<enter><exit>s+Checks\n"
-macro index G "!mbsync -c ~/.config/.mbsyncrc -a\n" "Receive new mails"
 bind attach <return> view-mailcap
 
 # disable confirmation
@@ -57,7 +41,7 @@ set quit
 unset mark_old
 
 # Settings for my mailbox
-set folder = ~/data/mail/fastmail
+set folder = ~/data/mail/
 
 set ssl_starttls = yes
 set ssl_force_tls = yes
@@ -72,17 +56,7 @@ set trash = "+Trash"
 set postponed = "+Drafts"
 
 mailboxes =INBOX \
-	  =tech-obsd \
-	  =ports-obsd \
-	  =misc-obsd \
-	  =announce-obsd \
-	  =dev-suckless \
-	  =hackers-suckless \
-	  =gnu \
-	  =github \
-	  =lists \
 	  =Sent \
-	  =Checks \
 	  =Drafts \
 	  =spam \
 	  =Trash

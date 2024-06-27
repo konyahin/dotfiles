@@ -20,7 +20,7 @@ Usage:
     bookmark ls
         view bookmarks list in your \$PAGER
     bookmark cat
-        print all you bookamrks to terminal
+        print all you bookmarks to terminal
     bookmark count
         show number of your bookmarks
     bookmark get
@@ -34,8 +34,8 @@ then
     exit
 fi
 
-BOOKMARKS=~/data/bookmarks/bookmarks
-TEMP=~/data/bookmarks/bookmarks.temp
+BOOKMARKS=~/data/bookmarks
+TEMP=~/data/bookmarks.temp
 
 if [ "ls" = "$1" ]
 then

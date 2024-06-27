@@ -13,8 +13,8 @@ IMAPStore epik-remote
 Account epik
 
 MaildirStore epik-local
-Path ~/data/mail/fastmail/
-Inbox ~/data/mail/fastmail/INBOX
+Path ~/data/mail/
+Inbox ~/data/mail/INBOX
 Subfolders Verbatim
 
 Channel epik
