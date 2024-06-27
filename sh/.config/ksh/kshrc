@@ -2,19 +2,8 @@
 
 . ~/.profile
 
-export PATH=~/.bin:~/.local/bin:$PATH
-export LC_ALL=ru_RU.UTF-8
-export LANG=ru_RU.UTF-8
-export LANGUAGE=ru_RU.UTF-8
-
-export NAME='Anton Konyahin'
-export EMAIL='me@konyahin.xyz'
-
-export EDITOR='nvi'
-export ALTERNATE_EDITOR='emacs -nw'
-export PAGER=less
-export BROWSER=open
-export PASSWORD_STORE_DIR="$HOME/data/pass"
+alias reload='. ~/.config/ksh/kshrc'
+alias esh='$EDITOR ~/.config/ksh/kshrc'
 
 set -o emacs
 HISTCONTROL=ignoredups:ignorespace
@@ -22,62 +11,9 @@ HISTSIZE=1000
 HISTFILE=$HOME/.ksh_history
 PS1='${USER}@\h:\W\$ '
 
-alias z=zathura
-alias e='$EDITOR'
-alias em='$ALTERNATE_EDITOR'
-alias v=nview
-alias nb='newsboat && bookmark count'
-alias m=mutt
-alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
-alias l='ls -p -A'
-alias lr='l -R'
-
-alias esh='$EDITOR ~/.config/ksh/kshrc'
-alias evi='$EDITOR ~/.nexrc'
-alias enb='$EDITOR ~/.newsboat/config'
-alias enbu='$EDITOR ~/.newsboat/urls'
-
-alias ef='$EDITOR $(find . | fzf)'
-alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
-alias en='$EDITOR "$(find ~/public_gopher -type f | fzf)"'
-alias vn='v "$(find ~/public_gopher -type f | fzf)"'
-alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
-
-alias escratch='$EDITOR $SCRATCH_PATH'
-alias etodo='$EDITOR -c "source ~/.local/share/nvi/todotxt" $TODO_PATH'
-
 alias cvsupdate='cvs -q up -Pd -A'
 alias cvsdiff='cvs diff -uNp'
 alias cvsrestore='cvs update -C'
-
-alias gpush='git remote | xargs -n 1 git push'
-
-alias notes="vf1 localhost/1/~anton"
-
-fzf-in () {
-    found=$(find . -not -path "*.git*" | fzf)
-    [ -d "$found" ] && cd "$found" && return
-    [ -f "$found" ] && $EDITOR "$found" && return
-}
-alias /=fzf-in
-alias //='cd ~/; /'
-
-me () {
-    $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
-}
-
-jp () {
-    projects=$(find ~/project/ -type d -maxdepth 1 -mindepth 1 ! -name konyahin)
-    personal=$(find ~/project/konyahin -type d -maxdepth 1 -mindepth 1)
-    selected=$(echo "$projects\n$personal" | fzf)
-    [ -n "$selected" ] && cd "$selected"
-}
-
-cheat () {
-    curl "cheat.sh/$1" | less -r
-}
-
-alias reload='. ~/.config/ksh/kshrc'
 
 whatabout () {
     $PAGER "/usr/local/share/doc/pkg-readmes/$1"

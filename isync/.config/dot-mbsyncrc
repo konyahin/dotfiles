@@ -20,6 +20,6 @@ Subfolders Verbatim
 Channel epik
 Far :epik-remote:
 Near :epik-local:
-Sync Pull
+Sync All
 Patterns INBOX Spam
 SyncState *
