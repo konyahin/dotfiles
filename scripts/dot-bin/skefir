@@ -2,6 +2,12 @@
 
 set -eu
 
+LESS_VERSION=$(less --version | head -n 1 | awk '{print $2}' | cut -d. -f1)
+if [ "$LESS_VERSION" -lt "582" ]; then
+    echo "Your less version is too old ($LESS_VERSION). Please, install 582+ version of less."
+    exit 1
+fi
+
 if [ "$#" -lt 2 ]; then
     echo "Usage: skefir [-n] <host> <url>"
     exit 1
@@ -13,20 +19,20 @@ if [ "$1" = "-n" ]; then
 fi
 
 link () {
-    LINK=$1
+    SHORTCUT=$(echo "$1" | base64 | tr -d '=')
     LINE=$2
     ARGS=$3
 
-    printf "[%3d] " "$LINK"
+    printf "[%5s] " "$SHORTCUT"
     echo "$LINE" | awk -F '\t' '{print substr($1, 2)}'
 
     KEFIR_CALL="$(echo "$LINE" | awk -F '\t' '{printf "%s %s", $3, $2}')"
-    COMMAND="$LINK shell skefir $ARGS $KEFIR_CALL"
+    COMMAND="$SHORTCUT shell skefir $ARGS $KEFIR_CALL"
     printf "%s\n" "$COMMAND" >> "$LESSKEY_FILE"
 }
 
 viewer () {
-    LINK=1
+    LINK=0
     while read -r LINE || [ -n "$LINE" ]; do
         case "$LINE" in
         i*)
@@ -48,9 +54,9 @@ viewer () {
 }
 
 LESSKEY_FILE=$(mktemp -t skefir.XXXXXX)
-echo "#command" > "$LESSKEY_FILE"
-
+echo "#command" >> "$LESSKEY_FILE"
 TEXT=$(printf "%s\r\n" "$2" | nc "$1" 70)
+
 [ -z "${NO_MAP:-}" ] && TEXT="$(echo "$TEXT" | viewer)"
 echo "$TEXT" | less --lesskey-src="$LESSKEY_FILE"
 
