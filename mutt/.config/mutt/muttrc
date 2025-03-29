@@ -17,7 +17,6 @@ alternative_order text/plain text/html
 
 set header_cache = ~/data/mail/cache
 
-set sort = threads
 # hide plus sign if line in mail too long
 set markers = no
 
