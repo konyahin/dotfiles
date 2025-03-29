@@ -1,6 +1,76 @@
-export PATH="$HOME/.cargo/bin:$PATH"
+# system env
+export PATH=~/.bin:~/.local/bin:$PATH
+export LC_ALL=ru_RU.UTF-8
+export LANG=ru_RU.UTF-8
+export LANGUAGE=ru_RU.UTF-8
 
-source .profile
 
-alias reload='source ~/.zshrc'
+# personal info
+export NAME='Anton Konyahin'
+export EMAIL='me@konyahin.xyz'
+
+
+# programs
+export EDITOR='nvi'
+export ALTERNATE_EDITOR='emacs -nw'
+export PAGER=less
+export BROWSER=open
+export PASSWORD_STORE_DIR="$HOME/data/pass"
+export TEMPL_DIR="$HOME/projects/templates"
+
+alias z=zathura
+alias e='$EDITOR'
+alias em='$ALTERNATE_EDITOR'
+alias v=nview
+alias nb='newsboat && bookmark count'
+alias m='mutt && isync'
+alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
+alias l='ls -p -A'
+alias lr='l -R'
+
+
+# configs editing
+alias evi='$EDITOR ~/.nexrc'
+alias enb='$EDITOR ~/.newsboat/config'
+alias enbu='$EDITOR ~/.newsboat/urls'
 alias esh='$EDITOR ~/.zshrc'
+alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
+
+
+# text editing
+alias ef='$EDITOR $(find . | fzf)'
+alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
+
+
+# usefull functions
+alias gpush='git remote | xargs -n 1 git push'
+
+fzf-in () {
+    found=$(find . -not -path "*.git*" | fzf)
+    [ -d "$found" ] && cd "$found" && return
+    [ -f "$found" ] && $EDITOR "$found" && return
+}
+alias /=fzf-in
+alias //='cd ~/; /'
+
+me () {
+    $EDITOR $(make 2>&1 | grep '^.*\.[ch]:' | fzf | awk -F: '{printf "-c %s %s\n", $2, $1}')
+}
+
+jp () {
+    projects=$(find ~/projects/ -type d -maxdepth 1 -mindepth 1 ! -name konyahin)
+    selected=$(echo "$projects" | fzf)
+    [ -n "$selected" ] && cd "$selected"
+}
+
+
+# zsh specific
+alias reload='source ~/.zshrc'
+
+setopt EXTENDED_HISTORY
+setopt inc_append_history_time
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source <(fzf --zsh)
+
+source ~/.profile
