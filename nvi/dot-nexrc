@@ -31,7 +31,7 @@ map delete_all; 1GdG
 map ;m copy_word;temp_buffer;insert_command;read !man insert_word;A| col -b1G
 
 " fzf open files
-map ;o insert_command;:!ls -R | fzf >> %:eIEdit :bg
+map ;o insert_command;:!git ls-files | fzf >> %:eIEdit :bg
 
 " fzf git grep TODO
 map ;g wb"zyw:C:!git grep "zpA | fzf >> %
