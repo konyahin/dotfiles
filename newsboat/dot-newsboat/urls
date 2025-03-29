@@ -37,6 +37,9 @@ https://amodernist.com/all.atom
 https://code.visualstudio.com/feed.xml
 https://webzine.puffy.cafe/atom.xml
 https://mitchellh.com/feed.xml
+https://felixwrt.dev/atom.xml
+https://unplannedobsolescence.com/atom.xml
+https://htmx.org/essays/atom.xml
 
 https://news.ycombinator.com/rss
 https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
@@ -45,8 +48,7 @@ https://old.reddit.com/r/programming.rss "~/r/programming"
 https://old.reddit.com/r/java.rss "~/r/java"
 https://old.reddit.com/r/coding.rss "~/r/coding"
 https://old.reddit.com/r/openbsd.rss "~/r/openbsd"
-https://old.reddit.com/r/C_Programming.rss "~/r/c"
-https://old.reddit.com/r/lisp.rss "~/r/lisp"
+https://old.reddit.com/r/rust.rss "~/r/rust"
 
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 
