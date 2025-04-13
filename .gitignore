@@ -1,3 +1,6 @@
 newsboat/dot-newsboat/cache.db
 newsboat/dot-newsboat/history.cmdline
 newsboat/dot-newsboat/history.search
+
+gnupg/*
+!gnupg/.gnupg/gpg-agent.conf
