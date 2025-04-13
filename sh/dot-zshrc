@@ -65,12 +65,12 @@ jp () {
 
 
 # zsh specific
+source ~/.profile
 alias reload='source ~/.zshrc'
 
 setopt EXTENDED_HISTORY
 setopt inc_append_history_time
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(fzf --zsh)
 
-source ~/.profile
