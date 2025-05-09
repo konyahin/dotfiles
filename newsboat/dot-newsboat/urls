@@ -11,7 +11,7 @@ https://briancallahan.net/blog/feed.xml
 https://undeadly.org/cgi?action=rss
 https://xeiaso.net/blog.rss
 https://jmmv.dev/feed.xml
-https://pointersgonewild.com/feed/
+https://pointersgonewild.com/rss.xml
 https://flak.tedunangst.com/rss
 https://stevelosh.com/rss.xml
 https://www.cambus.net/atom.xml
@@ -40,7 +40,12 @@ https://mitchellh.com/feed.xml
 https://felixwrt.dev/atom.xml
 https://unplannedobsolescence.com/atom.xml
 https://htmx.org/essays/atom.xml
+https://www.openmymind.net/atom.xml
+https://www.robertdfrench.com/feed.atom
+https://system31.simone.computer/rss.xml
+https://hack.org/~mc/blog/index.xml
 
+https://inside.java/feed.xml
 https://news.ycombinator.com/rss
 https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
 https://www.linux.org.ru/section-rss.jsp?section=1
