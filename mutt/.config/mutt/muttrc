@@ -29,6 +29,7 @@ set index_format = "[%Z] %D %-15.15F %s"
 # Ctrl + l for view all url from mail
 macro pager \cl |urlview\n
 macro index d "<enter><exit>s+Trash\n"
+macro index S "<enter><exit>s+Spam\n"
 bind attach <return> view-mailcap
 
 # disable confirmation
@@ -57,5 +58,5 @@ set postponed = "+Drafts"
 mailboxes =INBOX \
 	  =Sent \
 	  =Drafts \
-	  =spam \
+	  =Spam \
 	  =Trash
