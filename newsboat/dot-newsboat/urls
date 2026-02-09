@@ -3,7 +3,6 @@ http://feeds.akkartik.name/kartiks-scrapbook?format=xml
 https://danluu.com/atom.xml "~Danluu blog"
 https://suckless.org/atom.xml
 https://nullprogram.com/feed/
-https://ounapuu.ee/posts/index.xml
 https://blog.benjojo.co.uk/rss.xml
 https://newsboat.org/news.atom "~Newsboat"
 https://hackaday.com/blog/feed/
@@ -31,7 +30,6 @@ https://benhoyt.com/writings/rss.xml
 https://www.cipht.net/atom.xml
 https://andrewkelley.me/rss.xml
 https://tratt.net/laurie/blog/blog.rss
-https://foojay.io/feed/
 https://ismailefe.org/feed.xml
 https://amodernist.com/all.atom
 https://code.visualstudio.com/feed.xml
@@ -44,7 +42,12 @@ https://www.openmymind.net/atom.xml
 https://www.robertdfrench.com/feed.atom
 https://system31.simone.computer/rss.xml
 https://hack.org/~mc/blog/index.xml
+https://borretti.me/feed.xml
+https://rednafi.com/index.xml
+https://antonz.org/index.xml
+https://ziglang.org/news/index.xml
 
+https://sachachua.com/blog/feed
 https://inside.java/feed.xml
 https://news.ycombinator.com/rss
 https://www.linux.org.ru/section-rss.jsp?section=2&group=4066
@@ -53,7 +56,9 @@ https://old.reddit.com/r/programming.rss "~/r/programming"
 https://old.reddit.com/r/java.rss "~/r/java"
 https://old.reddit.com/r/coding.rss "~/r/coding"
 https://old.reddit.com/r/openbsd.rss "~/r/openbsd"
-https://old.reddit.com/r/rust.rss "~/r/rust"
+https://old.reddit.com/r/zig.rss "~/r/zig"
+https://old.reddit.com/r/golang.rss "~/r/golang"
+https://old.reddit.com/r/emacs.rss "~/r/emacs"
 
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 

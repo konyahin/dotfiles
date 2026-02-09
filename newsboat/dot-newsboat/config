@@ -24,4 +24,5 @@ download-full-page no
 scrolloff 5
 show-keymap-hint no
 show-read-articles yes
+show-read-feeds no
 max-items 100
