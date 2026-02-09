@@ -1,9 +1,9 @@
 IMAPAccount epik
 Host konyahin.xyz
 Port 993
-UserCmd "pass mail/epik/login"
-PassCmd "pass mail/epik/password"
-SSLType IMAPS
+UserCmd "pass mail/login"
+PassCmd "pass mail/password"
+TLSType IMAPS
 # Linux
 # CertificateFile /etc/ssl/certs/ca-certificates.crt
 # OpenBSD
