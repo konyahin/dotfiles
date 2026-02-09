@@ -200,3 +200,23 @@
 (define-key todotxt-mode-map (kbd "M") 'knh/todotxt-move-to-maybe)
 (define-key todotxt-mode-map (kbd "W") 'knh/todotxt-move-to-waiting)
 (define-key todotxt-mode-map (kbd "A") 'knh/todotxt-mark-active)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(use-package almost-mono-themes
+  :config
+   (load-theme 'almost-mono-black t)
+   (load-theme 'almost-mono-gray t)
+   (load-theme 'almost-mono-cream t)
+  (load-theme 'almost-mono-white t))
