@@ -4,3 +4,5 @@ newsboat/dot-newsboat/history.search
 
 gnupg/*
 !gnupg/.gnupg/gpg-agent.conf
+.DS_Store
+emacs/.emacs.d/
