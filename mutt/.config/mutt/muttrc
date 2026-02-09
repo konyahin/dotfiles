@@ -46,7 +46,7 @@ set folder = ~/data/mail/
 set ssl_starttls = yes
 set ssl_force_tls = yes
 set smtp_url = "smtp://me@konyahin.xyz@konyahin.xyz:587"
-set smtp_pass = "`pass mail/epik/password`"
+set smtp_pass = "`pass mail/password`"
 set from = "me@konyahin.xyz"
 set realname = "Anton Konyahin"
 
