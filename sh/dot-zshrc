@@ -4,19 +4,18 @@ export LC_ALL=ru_RU.UTF-8
 export LANG=ru_RU.UTF-8
 export LANGUAGE=ru_RU.UTF-8
 
-
 # personal info
 export NAME='Anton Konyahin'
 export EMAIL='me@konyahin.xyz'
 
-
 # programs
-export EDITOR='nvi'
+export EDITOR='nvim'
 export ALTERNATE_EDITOR='emacs -nw'
 export PAGER=less
 export BROWSER=open
 export PASSWORD_STORE_DIR="$HOME/data/pass"
 export TEMPL_DIR="$HOME/projects/templates"
+export TASK_DIR="$HOME/data/tasks"
 
 alias z=zathura
 alias e='$EDITOR'
@@ -27,7 +26,7 @@ alias m='mutt && isync'
 alias isync='mbsync -c ~/.config/.mbsyncrc -a && mfilter ~/data/mail/fastmail'
 alias l='ls -p -A'
 alias lr='l -R'
-
+alias drill='hashcards drill --new-card-limit=10 --card-limit=20 ~/Documents/notes/hashcards'
 
 # configs editing
 alias evi='$EDITOR ~/.nexrc'
@@ -35,12 +34,12 @@ alias enb='$EDITOR ~/.newsboat/config'
 alias enbu='$EDITOR ~/.newsboat/urls'
 alias esh='$EDITOR ~/.zshrc'
 alias edot='$EDITOR "$(find ~/dotfiles -type f ! -path "*.git/*" | fzf)"'
-
+alias elf='$EDITOR ~/.config/lf/lfrc'
+alias evim='$EDITOR ~/.config/nvim/init.lua'
 
 # text editing
 alias ef='$EDITOR $(find . | fzf)'
 alias et='$EDITOR -t $(cat tags | awk "{print \$1}" | fzf)'
-
 
 # usefull functions
 alias gpush='git remote | xargs -n 1 git push'
@@ -63,10 +62,11 @@ jp () {
     [ -n "$selected" ] && cd "$selected"
 }
 
-
 # zsh specific
 source ~/.profile
 alias reload='source ~/.zshrc'
+
+fpath+=~/.zfunc
 
 setopt EXTENDED_HISTORY
 setopt inc_append_history_time
@@ -74,3 +74,6 @@ setopt inc_append_history_time
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(fzf --zsh)
 
+autoload -Uz compinit
+compinit
+compdef '_values "sttemp options" $(sttemp -l 2>/dev/null)' sttemp
