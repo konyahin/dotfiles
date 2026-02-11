@@ -46,6 +46,9 @@ https://borretti.me/feed.xml
 https://rednafi.com/index.xml
 https://antonz.org/index.xml
 https://ziglang.org/news/index.xml
+https://sdf.org/~pkal/blog/essays/.xml
+https://sdf.org/~pkal/blog/emacs/.xml
+https://sdf.org/~pkal/blog/tech/.xml
 
 https://sachachua.com/blog/feed
 https://inside.java/feed.xml
@@ -63,3 +66,4 @@ https://old.reddit.com/r/emacs.rss "~/r/emacs"
 https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
 
 https://github.com/tmewett/BrogueCE/releases.atom
+https://github.com/QwenLM/qwen-code/releases.atom
