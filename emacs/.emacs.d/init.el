@@ -49,14 +49,13 @@
 
 (use-package corfu
   :ensure t
-  :init (global-corfu-mode))
+  :hook (after-init . global-corfu-mode))
 
 (use-package eglot)
 
 (use-package go-mode
   :ensure t
   :hook ((go-mode . eglot-ensure)
-	 (go-mode . (lambda () (setq-local
-				tab-width 4
-				compile-command "go run ./...")))
+	 (go-mode . (lambda () (setq-local tab-width 4
+					   compile-command "go run ./...")))
 	 (before-save . gofmt-before-save)))
