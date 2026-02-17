@@ -10,9 +10,7 @@
   (menu-bar-mode -1)
   (when (display-graphic-p)
     (tool-bar-mode -1)
-    (scroll-bar-mode -1))
-
-  :bind ("C-x c" . my/compile))
+    (scroll-bar-mode -1)))
 
 (use-package project
   :init (setq compilation-always-kill t))
